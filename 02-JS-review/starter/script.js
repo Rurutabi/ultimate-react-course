@@ -66,7 +66,7 @@ const data = [
     publicationDate: "1965-01-01",
     author: "Frank Herbert",
     genres: ["science fiction", "novel", "adventure"],
-    hasMovieAdaptation: true,
+    hasMovieAdaptation: false,
     pages: 658,
     translations: {
       spanish: "",
@@ -135,10 +135,154 @@ const data = [
   },
 ];
 
-function getBooks() {
+// function getBook() {
+//   return data;
+// }
+
+// function getBooks(id) {
+//   return data.find((d) => d.id === id);
+// }
+
+// // const book = getBook(3);
+
+// // // const title = book.title
+// // // const author = book.author
+
+// // const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+// //   book;
+
+// // console.log(author, title, genres);
+
+// // // const primaryGenre = genres[0];
+// // // const secondGenre = genres[1];
+
+// // const [primaryGenre, secondGenre, ...otherGenres] = genres;
+
+// // console.log(primaryGenre, secondGenre, otherGenres);
+
+// // const newGenres = ["epic fantasy", ...genres];
+
+// // console.log(newGenres);
+
+// // const updatedBook = {
+// //   ...book,
+
+// //   //Adding a new property
+// //   moviePublicationDate: "2001-12-19",
+
+// //   //Overwriting an exiting project
+// //   pages: 1210,
+// // };
+// // const getYear = (str) => str.split("-")[0];
+
+// // console.log(updatedBook);
+
+// // const summary = `${title}, a ${pages}-pages long book was published in ${getYear(
+// //   publicationDate
+// // )}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+// // summary;
+
+// // const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+// // pagesRange;
+
+// // console.log(`The book has ${pagesRange} pages`);
+
+// // // function getYear(str) {
+// // //   return str.split("-")[0];
+// // // }
+
+// // console.log(getYear(publicationDate));
+// // // console.log(getYear(publicationDate));
+
+// // console.log(book.translations.spanish);
+
+// // const spanishTranslation = book.translations.spanish || "NOT TRANSLATE";
+// // console.log(spanishTranslation);
+
+// // console.log(book.reviews.librarything?.reviewsCount);
+// // const countWrong = book.reviews.librarything?.reviewsCount ?? "no data";
+
+// // console.log(countWrong);
+
+// // function getTotalReviewCount(book) {
+// //   const goodread = book.reviews.goodreads.reviewsCount;
+// //   const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+// //   return goodread + librarything;
+// // }
+
+// // console.log(getTotalReviewCount(book));
+
+// const books = getBook();
+
+// // console.log(books);
+// const title = books.map((book) => book.title);
+
+// // console.log(books);
+// // console.log(title);
+
+// const essentialData = books.map((book) => ({
+//   title: book.title,
+//   author: book.author,
+// }));
+
+// // essentialData;
+
+// const longBooks = books
+//   .filter((book) => book.pages > 500)
+//   .filter((book) => book.hasMovieAdaptation);
+// // longBooks;
+
+// const adventureBooks = books
+//   .filter((books) => books.genres.includes("adventure"))
+//   .map((value) => value.title);
+
+// // console.log(adventureBooks);
+
+// const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+// // pagesAllBooks;
+
+// const x = [5, 7, 2, 1, 3, 4];
+// const sorted = x.slice().sort((a, b) => a - b);
+// // sorted;
+// // x;
+
+// const sortedByPages = books.sort((a, b) => a.pages - b.pages);
+// // sortedByPages;
+
+// // Add book object to array
+// const newBook = {
+//   id: 6,
+//   title: "Harry ป๊อกเด้ง",
+//   author: "J.K. Rowling",
+// };
+
+// const bookAfterAdd = [...books, newBook];
+// bookAfterAdd;
+
+// const bookAfterDelete = bookAfterAdd.filter((book) => book.id !== 3);
+// bookAfterDelete;
+
+// const booksAfterUpdate = bookAfterDelete.map((book) =>
+//   book.id === 1 ? { ...book, pages: 1210 } : book
+// );
+// booksAfterUpdate;
+
+// console.log(books);
+
+// const randomval = fetch("https://jsonplaceholder.typicode.com/todos/1").then(
+//   (res) => res.json().then((data) => console.log(data))
+// );
+
+// console.log("jonas");
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await res.json();
+  console.log(data);
   return data;
 }
 
-function getBook(id) {
-  return data.find((d) => d.id === id);
-}
+// const value1 = getTodos();
+// console.log(value1);
+getTodos();
+console.log("LOL");
