@@ -285,4 +285,3 @@ async function getTodos() {
 // const value1 = getTodos();
 // console.log(value1);
 getTodos();
-console.log("LOL");
